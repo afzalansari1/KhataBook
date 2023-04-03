@@ -1,15 +1,20 @@
 package com.afzal.database
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
 import androidx.room.Query
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SubjectDao{
-    @Query("SELECT * FROM subject ORDER BY item_name ASC")
-    fun getAll(): Flow<List<Subject>>
+    @Insert
+    suspend fun insert(item: Subject)
 
-    @Query("SELECT * FROM subject WHERE item_name = :itemName ORDER BY item_name ASC")
-    fun getByItemName(itemName : String): Flow<List<Subject>>
+    @Delete
+    suspend fun delete(item: Subject)
+
+    @Query("SELECT * FROM item_name ORDER BY id ASC")
+    fun getAllSubject(): LiveData<List<Subject>>
 
 }

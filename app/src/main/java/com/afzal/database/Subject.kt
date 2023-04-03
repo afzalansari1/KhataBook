@@ -5,9 +5,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
-data class Subject(
-    @PrimaryKey val id : Int,
-    @NonNull @ColumnInfo(name = "item_name") val itemName: String,
-    @NonNull @ColumnInfo(name = "item_price") val itemPrice: Int
+@Entity(tableName = "item_name")
+class Subject(
+    @NonNull @ColumnInfo(name = "item") val item: String,
+    @NonNull @ColumnInfo(name = "price") val price: Int
 )

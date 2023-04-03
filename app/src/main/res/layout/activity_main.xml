@@ -35,9 +35,10 @@
         app:layout_constraintTop_toTopOf="@+id/expenses_lists"
         app:layout_constraintVertical_bias="1.0"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/expenses_lists"
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        tools:listitem="@layout/list_item"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
