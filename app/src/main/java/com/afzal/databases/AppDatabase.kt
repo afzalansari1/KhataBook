@@ -1,11 +1,11 @@
-package com.afzal.database
+package com.afzal.databases
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(Subject::class), version = 1)
+@Database(entities = [Subject::class], version = 2,exportSchema = false)
 abstract class AppDatabase: RoomDatabase() {
     abstract fun subjectDao(): SubjectDao
 
@@ -16,10 +16,10 @@ abstract class AppDatabase: RoomDatabase() {
         fun getDatabase(context: Context): AppDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
-                    context,
+                    context.applicationContext,
                     AppDatabase::class.java,
                     "app_database")
-                    .createFromAsset("database/bus_schedule.db")
+//                    .createFromAsset("database/item_name.db"
                     .build()
                 INSTANCE = instance
 

@@ -1,4 +1,4 @@
-package com.afzal.database
+package com.afzal.databases
 
 import androidx.lifecycle.LiveData
 
@@ -12,4 +12,5 @@ class SubjectRepository(private val subjectDao : SubjectDao) {
     suspend fun delete(subject: Subject){
         subjectDao.delete(subject)
     }
+
 }
