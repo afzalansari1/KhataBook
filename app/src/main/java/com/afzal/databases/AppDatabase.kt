@@ -22,7 +22,6 @@ abstract class AppDatabase: RoomDatabase() {
 //                    .createFromAsset("database/item_name.db"
                     .build()
                 INSTANCE = instance
-
                 instance
             }
         }

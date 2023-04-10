@@ -1,9 +1,7 @@
 package com.afzal.khatabook
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.afzal.databases.AppDatabase
 import com.afzal.databases.Subject
 import com.afzal.databases.SubjectRepository
